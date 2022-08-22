@@ -51,4 +51,12 @@ The connector configuration should look as follows, after adding the above the p
                    URIEncoding="UTF-8"/>
                    
 ```
+IS-5.9.0 upwards, the <IS_HOME>/repository/conf/deployment.toml file is being used to configure the server hence the following configurations can be added in the deployment.toml file to configure the trustmanager.
+
+```
+[transport.https.sslHostConfig.properties]
+....
+....
+trustManagerClassName = "org.wso2.custom.tls.expiry.validation.CustomExpiryValidationTrustManager"
+```
 4. Restart the server.
