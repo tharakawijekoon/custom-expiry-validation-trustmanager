@@ -1,6 +1,8 @@
 # custom-expiry-validation-trustmanager
 
-The custom trust manager implementation validates the certificate expiry of the client certificates and prevents users with expired certificates accessing the server.
+The Identity Server depends on the tomcat container to validate the client cert which in turn depends on the JDK default implementation, therefore if you have a certificate in the trust store javax.net.ssl default TrustManagers will trust it regardless of expiry of the certificate.
+
+This custom trust manager implementation validates the certificate expiry of the client certificates and prevents users with expired certificates accessing the server.
 
 ## Build
 Execute the following command to build the project  in the directory where the pom file is located to build the project.
